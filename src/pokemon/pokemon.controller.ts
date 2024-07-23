@@ -8,10 +8,8 @@ export class PokemonController {
   constructor(private readonly pokemonService: PokemonService) {}
 
   @Post()
-  create(@Body() createPokemonDto: CreatePokemonDto) {
-    createPokemonDto.name = createPokemonDto.name.toLocaleLowerCase()
-    return createPokemonDto;
-    //return this.pokemonService.create(createPokemonDto);
+  create(@Body() createPokemonDto: CreatePokemonDto) {    
+    return this.pokemonService.create(createPokemonDto);
   }
 
   @Get()
